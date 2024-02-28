@@ -1,0 +1,8 @@
+#Object Files 
+*.o
+
+#Execs
+myprogram
+
+#.txt
+logs.txt

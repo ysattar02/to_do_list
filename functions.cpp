@@ -6,15 +6,21 @@ std::map<int, std::string> items;
 const std::string PATHNAME = "/Users/yusufsattar/Desktop/to_do_list/logs.txt";
 
 void welcome_message(){
-    //to do
+    std::cout << "Initializing To Do List: \n";
+    clear_screen(1);
 }
 
 void exit_message(){
-    //to do
+    clear_screen(0);
+    std::cout << "De-Initializing To Do List: \n";
+    std::this_thread::sleep_for(std::chrono::seconds(1));
+    std::cout << "Saving Data!: \n";
+    std::this_thread::sleep_for(std::chrono::seconds(1));
+    std::cout << "Shutdown Successfull! - Goodbye! \n";
+    clear_screen(1);
 }
 
 void show_items(){
-    //done
     std::map<int, std::string>::iterator it = items.begin();
     //add empty map check here
     std::cout << "-------------------- \n";

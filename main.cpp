@@ -10,10 +10,12 @@ int main() {
     return 0;
 }
 
-
 /*
  * To Add:
- * 1. Screen Clearing On Succesfull Add of Task
+ * 1. Add Parameter to clear screen function to handle the time
  * 2. Welcome Messages with Delay
  * 3. Exit Message with Delay
+ * 4. Deleting Task Functionality
+ * 5. Ensure no duplicate Task numbers
+ * 6. If Map is empty, print a message saying that if user chooses show items
  */

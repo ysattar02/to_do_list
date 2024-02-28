@@ -3,4 +3,4 @@ project(to_do_list)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(to_do_list main.cpp)
+add_executable(to_do_list main.cpp functions.cpp functions.h)

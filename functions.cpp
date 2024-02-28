@@ -16,14 +16,15 @@ void show_items(){
     //done
     std::map<int, std::string>::iterator it = items.begin();
     //add empty map check here
+    std::cout << "-------------------- \n";
     while (it != items.end()){
-        std::cout << "Task #: " << it->first << ", Task: " << it->second << "\n";
+        std::cout << "Task #: " << it->first << " - " << it->second << "\n";
         it++;
     }
+    std::cout << "-------------------- \n";
 }
 
 int write_items(){
-    //done
     std::ofstream logFile("logs.txt", std::ios::trunc);
     if (!logFile.is_open()){
         std::cerr << "Error: File Not Opened \n";
@@ -39,12 +40,10 @@ int write_items(){
         std::cerr << "Error: File Not Closed \n";
         return 0;
     }
-    std::cout << "Write Opp Successful \n";
     return 0;
 }
 
 int read_items(){
-    //to do
     std::ifstream logFile("logs.txt");
     if (!logFile.is_open()){
         std::cerr << "Error: File Not Opened \n";
@@ -67,7 +66,6 @@ int read_items(){
         std::cerr << "Error: File Not Closed \n";
         return 0;
     }
-    std::cout << "Read Opp Successful \n";
     return 0;
 }
 
@@ -81,12 +79,33 @@ int add_item(){
     std::string task;
     std::getline(std::cin, task);
     items[task_id] = task;
+    clear_screen(1);
     return 0;
+}
+
+int complete_item(){
+    std::cout << "Enter Task ID to Complete: \n";
+    int task_id;
+    std::cin >> task_id;
+    std::map<int, std::string>::iterator it = items.begin();
+    while (it != items.end()){
+        if (it->first == task_id){
+            items.erase(it->first);
+            std::cout << "Task " << task_id << " Completed! \n";
+            clear_screen(1);
+            return 0;
+        }
+        it++;
+    }
+    std::cerr << "Task ID Not Found \n";
+    clear_screen(1);
+    return -1;
 }
 
 void print_user_choice(){
     std::cout << "Enter 1 to Add a Task: \n";
     std::cout << "Enter 2 to See Existing Tasks: \n";
+    std::cout << "Enter 3 to Complete a Task \n";
     std::cout << "Enter Any Other Key to Exit: \n";
 }
 
@@ -101,9 +120,16 @@ int run_program(){
     else if (user_choice == 2){
         show_items();
     }
+    else if (user_choice == 3){
+        complete_item();
+    }
     else{
         return -1;
     }
     return 1;
 }
 
+void clear_screen(int seconds){
+    std::this_thread::sleep_for(std::chrono::seconds(seconds));
+    system("clear");
+}

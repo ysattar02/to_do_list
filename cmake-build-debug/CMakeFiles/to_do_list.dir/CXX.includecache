@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/yusufsattar/Desktop/to_do_list/functions.cpp
+functions.h
+/Users/yusufsattar/Desktop/to_do_list/functions.h
+
+/Users/yusufsattar/Desktop/to_do_list/functions.h
+iostream
+-
+fstream
+-
+sstream
+-
+map
+-
+
+/Users/yusufsattar/Desktop/to_do_list/main.cpp
+functions.h
+/Users/yusufsattar/Desktop/to_do_list/functions.h
+

@@ -129,6 +129,30 @@ to_do_list/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/to_do_list.dir/build.make CMakeFiles/to_do_list.dir/build
 .PHONY : to_do_list/fast
 
+functions.o: functions.cpp.o
+.PHONY : functions.o
+
+# target to build an object file
+functions.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/to_do_list.dir/build.make CMakeFiles/to_do_list.dir/functions.cpp.o
+.PHONY : functions.cpp.o
+
+functions.i: functions.cpp.i
+.PHONY : functions.i
+
+# target to preprocess a source file
+functions.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/to_do_list.dir/build.make CMakeFiles/to_do_list.dir/functions.cpp.i
+.PHONY : functions.cpp.i
+
+functions.s: functions.cpp.s
+.PHONY : functions.s
+
+# target to generate assembly for a file
+functions.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/to_do_list.dir/build.make CMakeFiles/to_do_list.dir/functions.cpp.s
+.PHONY : functions.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -162,6 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... to_do_list"
+	@echo "... functions.o"
+	@echo "... functions.i"
+	@echo "... functions.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

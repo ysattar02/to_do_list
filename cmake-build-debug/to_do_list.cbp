@@ -78,6 +78,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/yusufsattar/Desktop/to_do_list/functions.cpp">
+			<Option target="to_do_list"/>
+		</Unit>
+		<Unit filename="/Users/yusufsattar/Desktop/to_do_list/functions.h">
+			<Option target="to_do_list"/>
+		</Unit>
 		<Unit filename="/Users/yusufsattar/Desktop/to_do_list/main.cpp">
 			<Option target="to_do_list"/>
 		</Unit>

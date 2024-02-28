@@ -3,6 +3,7 @@
 //
 #include "functions.h"
 std::map<int, std::string> items;
+const std::string PATHNAME = "/Users/yusufsattar/Desktop/to_do_list/logs.txt";
 
 void welcome_message(){
     //to do
@@ -25,7 +26,7 @@ void show_items(){
 }
 
 int write_items(){
-    std::ofstream logFile("logs.txt", std::ios::trunc);
+    std::ofstream logFile(PATHNAME, std::ios::trunc);
     if (!logFile.is_open()){
         std::cerr << "Error: File Not Opened \n";
         return 0;
@@ -43,26 +44,33 @@ int write_items(){
     return 0;
 }
 
-int read_items(){
-    std::ifstream logFile("logs.txt");
-    if (!logFile.is_open()){
+int read_items() {
+    std::ifstream logFile(PATHNAME);
+    if (!logFile.is_open()) {
         std::cerr << "Error: File Not Opened \n";
         return 0;
     }
     std::string line;
-    while (std::getline(logFile, line)){
+    while (std::getline(logFile, line)) {
         std::istringstream iss(line);
-        int key;
-        std::string value;
-        char delimiter;
-        if (!(iss >> key >> delimiter >> value)) {
+        std::string token;
+        if (std::getline(iss, token, ':')) {
+            int key = std::stoi(token);
+            if (std::getline(iss, token)) {
+                // Trim leading and trailing spaces from the value
+                size_t start = token.find_first_not_of(" ");
+                size_t end = token.find_last_not_of(" ");
+                if (start != std::string::npos && end != std::string::npos)
+                    items[key] = token.substr(start, end - start + 1);
+            } else {
+                std::cerr << "Error: Invalid line format in file \n";
+            }
+        } else {
             std::cerr << "Error: Invalid line format in file \n";
-            continue;
         }
-        items[key] = value;
     }
     logFile.close();
-    if (logFile.is_open()){
+    if (logFile.is_open()) {
         std::cerr << "Error: File Not Closed \n";
         return 0;
     }
@@ -70,6 +78,7 @@ int read_items(){
 }
 
 int add_item(){
+    clear_screen(0);
     std::cout << "Enter Task ID: \n";
     int task_id;
     std::cin >> task_id;

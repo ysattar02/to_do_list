@@ -12,7 +12,7 @@ int main() {
 
 /*
  * To Add:
- * 1. Add Parameter to clear screen function to handle the time
+ DONE * 1. Add Parameter to clear screen function to handle the time
  * 2. Welcome Messages with Delay
  * 3. Exit Message with Delay
  * 4. Deleting Task Functionality

@@ -13,6 +13,7 @@
 #include <map>
 
 extern std::map<int, std::string> items;
+extern const std::string PATHNAME;
 
 void welcome_message();
 void exit_message();

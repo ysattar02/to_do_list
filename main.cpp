@@ -1,10 +1,19 @@
 #include "functions.h"
 
 int main() {
-    items[10] = "HW1";
-    items[3] = "HW7";
-    items[2] = "HW8";
-    show_items();
+    read_items();
+    int program = run_program();
+    while (program != -1){
+        program = run_program();
+    }
     write_items();
     return 0;
 }
+
+
+/*
+ * To Add:
+ * 1. Screen Clearing On Succesfull Add of Task
+ * 2. Welcome Messages with Delay
+ * 3. Exit Message with Delay
+ */

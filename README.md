@@ -9,5 +9,6 @@ Run Instructions:
 OR 
 
 1. make clean 
+
 Note: This will clear all executables
 -----------------------

@@ -3,7 +3,11 @@
 //
 #include "functions.h"
 std::map<int, std::string> items;
-const std::string PATHNAME = "/Users/yusufsattar/Desktop/to_do_list/logs.txt";
+
+/*
+ * Enter Your File Path Here
+ */
+const std::string PATHNAME = "INSERT PATH HERE";
 
 void welcome_message(){
     std::cout << "Initializing To Do List: \n";
